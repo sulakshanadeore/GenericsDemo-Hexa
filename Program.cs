@@ -11,6 +11,62 @@ internal class Program
 
         //WorkingWithSortedSet();
 
+        //WorkingWithStack();
+
+        Queue<Orders> queue = new Queue<Orders>();
+        
+        Orders o1=new Orders();
+        o1.OrderID = 101;
+        o1.OrderDate = new DateOnly(2025, 04, 01);
+        o1.CustomerDetails = new Customer { CustID = 1, CustName = "Hari", City = "Pune", Rating = 5 };
+
+        List<Products> products = new List<Products>() 
+        { 
+            new Products {ProductID=1,ProdName="Chai",Price=10,Qty=1,UnitOfMeasurement="PerNo"},
+            new Products{ ProductID=3,ProdName="Coffee",Price=30,Qty=2,UnitOfMeasurement="PerNo"},
+            new Products{ ProductID=11,ProdName="Cold Coffee",Price=50,Qty=2,UnitOfMeasurement="PerNo"}
+
+        };
+        o1.MyCart=products;
+        queue.Enqueue(o1);
+
+        Orders o2 = new Orders
+        {
+            OrderID = 2,
+            OrderDate = new DateOnly(2025, 03, 31),
+            CustomerDetails = new Customer { CustID = 12, CustName = "Harish", City = "Bangalore", Rating = 5 },
+            MyCart = new List<Products>
+            {
+                new Products {ProductID=2,ProdName="Green Tea",Price=30,Qty=1,UnitOfMeasurement="PerNo"},
+            new Products{ ProductID=4,ProdName="Hot Coffee",Price=30,Qty=2,UnitOfMeasurement="PerNo"},
+            new Products{ ProductID=10,ProdName="Maggi",Price=50,Qty=2,UnitOfMeasurement="PerNo"}
+            }
+
+
+        }; ;
+        queue.Enqueue(o2);  
+
+
+        foreach (var item in queue)
+        {
+            Console.WriteLine($" OrderID=   {item.OrderID}   OrderDate=  { item.OrderDate}   Customer ID={item.CustomerDetails.CustID} CustomerName= {item.CustomerDetails.CustName}  City= {item.CustomerDetails.City} Rating= {item.CustomerDetails.Rating}");
+            string s = string.Format("|{0,5} | {1,15}| {2,5} | {3,3}|{4,4}", "ProductID", "ProductName", "Price", "Qty", "Amt(Rs)");
+            Console.WriteLine(s);
+            foreach (var item1 in item.MyCart)
+            {
+                
+                string s1 = string.Format("|{0,5} | {1,15}| {2,15} | {3,3}|{4,4}", item1.ProductID, item1.ProdName, item1.Price, item1.Qty, item1.Price * item1.Qty);
+                Console.WriteLine(s1);
+                //Console.WriteLine($"{item1.ProductID} {item1.ProdName} {item1.Price} {item1.Qty} {item1.UnitOfMeasurement} {item1.Price * item1.Qty}" ) ;
+            }
+            Console.WriteLine();
+            
+        }
+
+    }
+
+    private static void WorkingWithStack()
+    {
         Stack<Customer> stack = new Stack<Customer>();
         stack.Push(new Customer { CustID = 4, CustName = "Amol", City = "Pune", Rating = 5 });//collection initializer
 
@@ -26,7 +82,11 @@ internal class Program
 
         Customer c2 = new Customer { CustID = 1, CustName = "Seema", City = "Chennai", Rating = 4 }; //object initializer
         stack.Push(c2);
+        Print(stack);
+    }
 
+    private static void Print(Stack<Customer> stack)
+    {
         string s2 = string.Format("-{0,5} - {1,9}- {2,15} - {3,3}-", "", "", "", "");
         Console.WriteLine(s2);
         string s1 = string.Format("|{0,5} | {1,9}| {2,15} | {3,3}|", "CustID", "CustName", "City", "Rating");
@@ -36,10 +96,9 @@ internal class Program
 
         foreach (var item in stack)
         {
-            string s=string.Format("|{0,5} | {1,10}| {2,15} | {3,3}|", item.CustID, item.CustName, item.City, item.Rating);
+            string s = string.Format("|{0,5} | {1,10}| {2,15} | {3,3}|", item.CustID, item.CustName, item.City, item.Rating);
             Console.WriteLine(s);
         }
-
     }
 
     private static void WorkingWithSortedSet()
