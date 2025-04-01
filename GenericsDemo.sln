@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsDemo", "GenericsDemo.csproj", "{FECE821D-C52B-4957-9C91-9E24DF590CE2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E75CCCE-3E59-4179-9EF4-5811350EFCBB} = {8E75CCCE-3E59-4179-9EF4-5811350EFCBB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryDemoWithGenerics", "..\LibraryDemoWithGenerics\LibraryDemoWithGenerics.csproj", "{8E75CCCE-3E59-4179-9EF4-5811350EFCBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECE821D-C52B-4957-9C91-9E24DF590CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECE821D-C52B-4957-9C91-9E24DF590CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECE821D-C52B-4957-9C91-9E24DF590CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECE821D-C52B-4957-9C91-9E24DF590CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E75CCCE-3E59-4179-9EF4-5811350EFCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E75CCCE-3E59-4179-9EF4-5811350EFCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E75CCCE-3E59-4179-9EF4-5811350EFCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E75CCCE-3E59-4179-9EF4-5811350EFCBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
