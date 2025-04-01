@@ -24,17 +24,42 @@ internal class Program
         //SimpleDictionary();
         //WorkingWithClassInDictionary();
 
+        LinkedListWorking();
+        //ComplexDictionaryDemoWorking();
+    }
+
+    private static void LinkedListWorking()
+    {
+        LinkedList<int> list = new LinkedList<int>();
+        list.AddFirst(1);
+        list.AddLast(100);
+
+        list.AddBefore(list.Last, 99);
+
+        list.AddAfter(list.Find(99), 98);
+        list.AddAfter(list.First, 2);
+        LinkedListNode<int> node = list.FindLast(100);
+        int foundValue = node.Previous.Value;
+        Console.WriteLine("Found the value= " + foundValue);
+        foreach (var item in list)
+        {
+            Console.Write(item + "  ");
+        }
+    }
+
+    private static void ComplexDictionaryDemoWorking()
+    {
         Dictionary<string, JewelleryDetails> allData = new Dictionary<string, JewelleryDetails>();
 
-        allData.Add("A Jewellers", new JewelleryDetails 
+        allData.Add("A Jewellers", new JewelleryDetails
         {
-            Jewelleries=new List<Jewellery> 
+            Jewelleries = new List<Jewellery>
             {
          new Jewellery{OrnamentID=1,Name="Bangles",MetalName="Gold",Weight=10 },
          new Jewellery{OrnamentID=2,Name="Rings",MetalName="Gold",Weight=10 },
          new Jewellery{ OrnamentID=3,Name="Something",MetalName="Silver",Weight=20}
-            
-            } 
+
+            }
         });
 
 
@@ -44,7 +69,7 @@ internal class Program
             Jewelleries = new List<Jewellery>
             {
          new Jewellery{OrnamentID=1,Name="Bangles",MetalName="Gold",Weight=10 }
-         
+
 
             }
         });
@@ -57,7 +82,7 @@ internal class Program
             {
          new Jewellery{OrnamentID=1,Name="Bangles",MetalName="Gold",Weight=10 },
          new Jewellery{OrnamentID=2,Name="Rings",MetalName="Gold",Weight=10 }
-         
+
 
             }
         });
@@ -74,10 +99,10 @@ internal class Program
                 Console.WriteLine("OrnamentID= " + item1.OrnamentID);
                 Console.WriteLine("Weight= " + item1.Weight);
                 Console.WriteLine("MetalName= " + item1.MetalName);
-                    Console.WriteLine();
+                Console.WriteLine();
             }
             Console.WriteLine("===============");
-           
+
 
         }
     }
